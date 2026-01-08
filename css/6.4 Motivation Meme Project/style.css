@@ -1,0 +1,19 @@
+body
+{
+    background-color: black;
+}
+.fortext {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+img
+{
+    border: 5px solid white;
+}
+div
+{
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+.color-title
+{
+    font-weight: normal;
+}
+img
+{
+    height: 200px;
+    width: 200px;
+}
+#red
+{
+    color:red;
+}
+#blue
+{
+    color:rgb(0, 34, 255);
+}
+#orange
+{
+    color:rgb(255, 149, 0);
+}
+#green
+{
+    color:rgba(2, 70, 10, 0.585);
+}
+#yellow
+{
+    color:rgb(229, 255, 0);
+}
