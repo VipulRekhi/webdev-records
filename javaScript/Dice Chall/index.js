@@ -9,4 +9,16 @@ var randomnum2=Math.floor(Math.random()*6)+1;
 var src1="dice"+randomnum2+".png";
 var isrc2="images/"+src1;
 var image2=document.querySelectorAll("img")[1].setAttribute("src",isrc2);
+if(randomnum1>randomnum2)
+{
+    document.querySelector("h1").innerHTML="Player1 Wins";
+}
+else if(randomnum2>randomnum1)
+{
+   document.querySelector("h1").innerHTML="Player2 Wins"; 
+}
+else
+{
+    document.querySelector("h1").innerHTML="Draw hehe";
+}
 
