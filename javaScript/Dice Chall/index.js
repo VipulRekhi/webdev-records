@@ -19,6 +19,6 @@ else if(randomnum2>randomnum1)
 }
 else
 {
-    document.querySelector("h1").innerHTML="Draw hehe";
+    document.querySelector("h1").innerHTML="Draw hehe :)";
 }
 
