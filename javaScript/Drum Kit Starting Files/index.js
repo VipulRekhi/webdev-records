@@ -1,9 +1,24 @@
+
+//for click
 for(var i=0;i<7;i++)
 {
     document.querySelectorAll("button")[i].addEventListener("click",function()
 {
    var letter=this.innerHTML;
-   switch(this.innerHTML)
+   makeSound(letter);
+
+});
+
+//for the key press
+document.addEventListener("keypress",function(event)
+{
+    makeSound(event.key);
+}
+)
+
+//actual sound fuunc
+   function makeSound(key){
+   switch(key)
    {
    case "w":
     var audio = new Audio("./sounds/crash.mp3");
@@ -32,8 +47,9 @@ for(var i=0;i<7;i++)
     case "l":
     var audio = new Audio("./sounds/tom-4.mp3");
     audio.play();
-    break;
-    
+    break;   
    }
 }
-);}
+
+;
+}
