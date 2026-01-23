@@ -144,4 +144,17 @@
             }
             if (value === "=") {
                 display.innerHTML = eval(display.innerHTML);
-   
+            } else {
+                if (display.innerHTML === "0") {
+                    display.innerHTML = value;
+                } else {
+                    display.innerHTML += value;
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+
+</html>   
