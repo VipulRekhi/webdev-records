@@ -56,8 +56,8 @@
             border-radius: 50%;
             text-align: center;
         }
-        .switch>.bu
-        {
+
+        .switch>.bu {
             background-color: black;
             color: white;
             font-weight: bold;
@@ -67,23 +67,24 @@
             width: 100px;
             border-radius: 50%;
         }
-        .clear
-        {
+
+        .clear {
             display: flex;
             justify-content: center;
             height: 50px;
             border-radius: 10%;
         }
-        .clear>button
-        {
+
+        .clear>button {
             background-color: black;
             color: white;
             font-weight: bold;
-            border: 5px solid ;
-             
+            border: 5px solid;
+
         }
     </style>
 </head>
+
 <body>
     <h1 class="heading">Welcome</h1>
     <div class="con1">
@@ -131,30 +132,29 @@
     <div class="clear">
         <button type="button">CLEAR</button>
     </div>
- <script>
-    const display = document.querySelector(".display");
-    const buttons = document.querySelectorAll("button");
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", function () {
-            let value = buttons[i].innerHTML;
-            if(value =="CLEAR")
-            {
-                display.innerHTML = 0;
-                return;
-            }
-            if (value === "=") {
-                display.innerHTML = eval(display.innerHTML);
-            } else {
-                if (display.innerHTML === "0") {
-                    display.innerHTML = value;
-                } else {
-                    display.innerHTML += value;
+    <script>
+        const display = document.querySelector(".display");
+        const buttons = document.querySelectorAll("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function () {
+                let value = buttons[i].innerHTML;
+                if (value == "CLEAR") {
+                    display.innerHTML = 0;
+                    return;
                 }
-            }
-        });
-    }
-</script>
+                if (value === "=") {
+                    display.innerHTML = eval(display.innerHTML);
+                } else {
+                    if (display.innerHTML === "0") {
+                        display.innerHTML = value;
+                    } else {
+                        display.innerHTML += value;
+                    }
+                }
+            });
+        }
+    </script>
 
 </body>
 
-</html>   
+</html>
