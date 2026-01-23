@@ -131,3 +131,17 @@
     <div class="clear">
         <button type="button">CLEAR</button>
     </div>
+ <script>
+    const display = document.querySelector(".display");
+    const buttons = document.querySelectorAll("button");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+            let value = buttons[i].innerHTML;
+            if(value =="CLEAR")
+            {
+                display.innerHTML = 0;
+                return;
+            }
+            if (value === "=") {
+                display.innerHTML = eval(display.innerHTML);
+   
