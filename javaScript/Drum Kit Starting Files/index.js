@@ -6,6 +6,7 @@ for(var i=0;i<7;i++)
 {
    var letter=this.innerHTML;
    makeSound(letter);
+   animate(letter);
 
 });
 
@@ -13,6 +14,7 @@ for(var i=0;i<7;i++)
 document.addEventListener("keypress",function(event)
 {
     makeSound(event.key);
+    animate(event.key);
 }
 )
 
@@ -49,7 +51,13 @@ document.addEventListener("keypress",function(event)
     audio.play();
     break;   
    }
+};
+function animate(current_key)
+{
+    var active_button=document.querySelector("."+current_key);
+    active_button.classList.add("pressed");
+
 }
 
-;
+
 }
