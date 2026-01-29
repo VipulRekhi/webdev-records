@@ -5,3 +5,8 @@ $(document).keypress(function (event)
     text +=cliked;
     $("h1").text(text);
 });
+$("h1").on("mouseover",function()
+{
+    $("h1").text("mouse ")
+    $("h1").css("color","yellow")
+});
