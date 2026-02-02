@@ -1,0 +1,16 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "my first npm",
+  "license": "ISC",
+  "author": "vipul",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@fakerjs/superhero": "^1.2.0",
+    "sillyname": "^0.1.0"
+  }
+}
