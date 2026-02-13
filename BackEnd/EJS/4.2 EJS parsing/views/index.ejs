@@ -9,7 +9,11 @@
 
 <body>
   <!-- Write your code here -->
-   <h1>your name have <%=numberofletter %> letters in Total</h1>
+   <% if(locals.numberofletters) %>
+   <% { %>
+   <h1>your name have <%=numberofletters %> letters in Total</h1>
+   <% } %>
+   <h1>Ennter Your Name Here</h1>
   <form action="/submit" method="POST">
     <input type="text" name="fName" placeholder="First name">
     <input type="text" name="lName" placeholder="Last name">

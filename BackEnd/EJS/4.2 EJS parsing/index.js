@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
   var sizestr=req.body["fName"].length+req.body["lName"].length;
-  res.render("index.ejs" ,{numberofletter : sizestr})
+  res.render("index.ejs" ,{numberofletters : sizestr})
 
 });
 
