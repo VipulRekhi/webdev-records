@@ -31,12 +31,64 @@ app.get("/filter",(req,res)=>
 });
 
 //4. POST a new joke
-
+app.post("/jokes",(req,res)=>
+{
+  const newjoke=
+  {
+    id:(jokes.length)+1,
+    jokeText:req.body.joke,
+    jokeType:req.body.type
+  }
+  jokes.push(newjoke);
+  res.json(newjoke);
+});
 //5. PUT a joke
+app.put("/jokes/:id",(req,res)=>
+{
+  const id=req.params.id;
+  const replacement=
+  {
+    id:id,
+    jokeText:req.body.joke,
+    jokeType:req.body.type
+  }
+  const req_index=jokes.findIndex((joke)=>joke.id==id);
+  jokes[req_index]=replacement;
+  res.json(replacement);
+});
 
 //6. PATCH a joke
+app.patch("/jokes/:id",(req,res)=>
+{
+  const id= parseInt(req.params.id);
+  const existing=jokes.find((joke)=>joke.id===id);
+  const patched={
+    id:id,
+    jokeText: req.body.joke || existing.jokeText,
+    jokeType: req.body.type || existing.jokeType
+  }
+  const index=jokes.findIndex((joke)=>joke.id===id);
+  jokes[index]=patched;
+  res.json(patched);
+});
 
 //7. DELETE Specific joke
+app.delete("/jokes/:id",(req,res)=>
+{
+  const id = parseInt(req.params.id);
+  const index=jokes.findIndex((joke)=>joke.id===id);
+  if(index>-1)
+  {
+    jokes.splice(index,1);
+    res.status(200);
+    res.json({status:"Deleted Succesfully"})
+  }
+  else
+  {
+    res.status(404);
+    res.json({error:'no such id exist'});
+  }
+});
 
 //8. DELETE All jokes
 
