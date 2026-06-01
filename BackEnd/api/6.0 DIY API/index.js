@@ -100,7 +100,7 @@ app.delete("/all",(req,res)=>
     res.status(200);
     res.json({status:"deleted all"})
   }
-  els
+  else
   {
     res.status(404);
     res.json({Warning:'you are not authorised to do it'});
