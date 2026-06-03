@@ -9,10 +9,24 @@ const db = new pg.Client(
   {
     user:"postgres",
     host:"localhost",
+    database:"world",
     password:"worldpass",
     port:5432
   }
 );
+
+db.connect();
+db.query("select * from capital",(err,res)=>
+{
+  if(err)
+  {
+    console.error("failed to fetch data"+err.stack);
+  }
+  else
+  {
+    quiz=res.rows;
+  }
+});
 
 let quiz = [
   { country: "France", capital: "Paris" },
