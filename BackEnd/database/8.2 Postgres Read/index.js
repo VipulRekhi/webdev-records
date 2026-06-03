@@ -4,6 +4,29 @@ import pg from "pg";
 
 const app = express();
 const port = 3000;
+let quiz=[];
+
+const db = new pg.Client(
+  {
+    user:"postgres",
+    host:"localhost",
+    database:"world",
+    password:"worldpass",
+    port:5432
+  }
+);
+
+db.connect();
+
+await db.query("select * from flags",(err,res)=>
+{
+  if(err)
+  {
+    console.error("failed to fetch the database "+err.stack);
+  }else{
+    quiz=res.rows;
+  }
+});
 
 let totalCorrect = 0;
 
