@@ -16,7 +16,7 @@ const db = new pg.Client(
 );
 
 db.connect();
-db.query("select * from capital",(err,res)=>
+await db.query("select * from capital",(err,res)=>
 {
   if(err)
   {
@@ -27,6 +27,7 @@ db.query("select * from capital",(err,res)=>
     quiz=res.rows;
   }
 });
+db.end();
 
 let quiz = [
   { country: "France", capital: "Paris" },
