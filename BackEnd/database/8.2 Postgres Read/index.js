@@ -4,7 +4,7 @@ import pg from "pg";
 
 const app = express();
 const port = 3000;
-let quiz=[];
+let  quiz=[];
 
 const db = new pg.Client(
   {
